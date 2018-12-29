@@ -30,6 +30,14 @@
         {
             this.tabCtrlMain = new System.Windows.Forms.TabControl();
             this.tabPageTerms = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numUpDownExtraPayment = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.numUpDownPMI = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numUpDownTaxes = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnCalculate = new System.Windows.Forms.Button();
             this.groupBoxTerms = new System.Windows.Forms.GroupBox();
             this.numUpDwnDownPayment = new System.Windows.Forms.NumericUpDown();
@@ -44,8 +52,17 @@
             this.numUpDwnLoanTerm = new System.Windows.Forms.NumericUpDown();
             this.tabPageAmort = new System.Windows.Forms.TabPage();
             this.dgvAmortization = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblMontlyPayment = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblAPR = new System.Windows.Forms.Label();
             this.tabCtrlMain.SuspendLayout();
             this.tabPageTerms.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownExtraPayment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownPMI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownTaxes)).BeginInit();
             this.groupBoxTerms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwnDownPayment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwnPaymentsPerYear)).BeginInit();
@@ -64,25 +81,118 @@
             this.tabCtrlMain.Location = new System.Drawing.Point(0, 0);
             this.tabCtrlMain.Name = "tabCtrlMain";
             this.tabCtrlMain.SelectedIndex = 0;
-            this.tabCtrlMain.Size = new System.Drawing.Size(675, 471);
+            this.tabCtrlMain.Size = new System.Drawing.Size(711, 354);
             this.tabCtrlMain.TabIndex = 0;
             this.tabCtrlMain.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabCtrlMain_Selected);
             // 
             // tabPageTerms
             // 
+            this.tabPageTerms.Controls.Add(this.groupBox2);
+            this.tabPageTerms.Controls.Add(this.groupBox1);
             this.tabPageTerms.Controls.Add(this.btnCalculate);
             this.tabPageTerms.Controls.Add(this.groupBoxTerms);
             this.tabPageTerms.Location = new System.Drawing.Point(4, 22);
             this.tabPageTerms.Name = "tabPageTerms";
             this.tabPageTerms.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTerms.Size = new System.Drawing.Size(667, 445);
+            this.tabPageTerms.Size = new System.Drawing.Size(703, 328);
             this.tabPageTerms.TabIndex = 0;
             this.tabPageTerms.Text = "Terms";
             this.tabPageTerms.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lblAPR);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.lblMontlyPayment);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Location = new System.Drawing.Point(8, 183);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(557, 137);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Results";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.numUpDownExtraPayment);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.numUpDownPMI);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.numUpDownTaxes);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Location = new System.Drawing.Point(298, 18);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(267, 151);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Fees and Taxes";
+            // 
+            // numUpDownExtraPayment
+            // 
+            this.numUpDownExtraPayment.Location = new System.Drawing.Point(121, 73);
+            this.numUpDownExtraPayment.Maximum = new decimal(new int[] {
+            250000,
+            0,
+            0,
+            0});
+            this.numUpDownExtraPayment.Name = "numUpDownExtraPayment";
+            this.numUpDownExtraPayment.Size = new System.Drawing.Size(120, 20);
+            this.numUpDownExtraPayment.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 73);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Extra Payment";
+            // 
+            // numUpDownPMI
+            // 
+            this.numUpDownPMI.Location = new System.Drawing.Point(121, 43);
+            this.numUpDownPMI.Maximum = new decimal(new int[] {
+            250000,
+            0,
+            0,
+            0});
+            this.numUpDownPMI.Name = "numUpDownPMI";
+            this.numUpDownPMI.Size = new System.Drawing.Size(120, 20);
+            this.numUpDownPMI.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "PMI (Year)";
+            // 
+            // numUpDownTaxes
+            // 
+            this.numUpDownTaxes.Location = new System.Drawing.Point(121, 17);
+            this.numUpDownTaxes.Maximum = new decimal(new int[] {
+            250000,
+            0,
+            0,
+            0});
+            this.numUpDownTaxes.Name = "numUpDownTaxes";
+            this.numUpDownTaxes.Size = new System.Drawing.Size(120, 20);
+            this.numUpDownTaxes.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 19);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Property Taxes (Year)";
+            // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(281, 27);
+            this.btnCalculate.Location = new System.Drawing.Point(588, 18);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(75, 23);
             this.btnCalculate.TabIndex = 6;
@@ -120,6 +230,11 @@
             this.numUpDwnDownPayment.Name = "numUpDwnDownPayment";
             this.numUpDwnDownPayment.Size = new System.Drawing.Size(120, 20);
             this.numUpDwnDownPayment.TabIndex = 10;
+            this.numUpDwnDownPayment.Value = new decimal(new int[] {
+            20000,
+            0,
+            0,
+            0});
             // 
             // label5
             // 
@@ -173,7 +288,7 @@
             this.numUpDwnAmount.Size = new System.Drawing.Size(120, 20);
             this.numUpDwnAmount.TabIndex = 6;
             this.numUpDwnAmount.Value = new decimal(new int[] {
-            250000,
+            270000,
             0,
             0,
             0});
@@ -198,6 +313,7 @@
             // 
             // numUpDwnRate
             // 
+            this.numUpDwnRate.DecimalPlaces = 2;
             this.numUpDwnRate.Location = new System.Drawing.Point(117, 66);
             this.numUpDwnRate.Name = "numUpDwnRate";
             this.numUpDwnRate.Size = new System.Drawing.Size(120, 20);
@@ -241,7 +357,7 @@
             this.tabPageAmort.Location = new System.Drawing.Point(4, 22);
             this.tabPageAmort.Name = "tabPageAmort";
             this.tabPageAmort.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAmort.Size = new System.Drawing.Size(667, 445);
+            this.tabPageAmort.Size = new System.Drawing.Size(703, 328);
             this.tabPageAmort.TabIndex = 1;
             this.tabPageAmort.Text = "Amortization";
             this.tabPageAmort.UseVisualStyleBackColor = true;
@@ -251,19 +367,60 @@
             this.dgvAmortization.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAmortization.Location = new System.Drawing.Point(8, 24);
             this.dgvAmortization.Name = "dgvAmortization";
-            this.dgvAmortization.Size = new System.Drawing.Size(651, 398);
+            this.dgvAmortization.Size = new System.Drawing.Size(687, 281);
             this.dgvAmortization.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(14, 25);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(88, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Monthly Payment";
+            // 
+            // lblMontlyPayment
+            // 
+            this.lblMontlyPayment.AutoSize = true;
+            this.lblMontlyPayment.Location = new System.Drawing.Point(117, 25);
+            this.lblMontlyPayment.Name = "lblMontlyPayment";
+            this.lblMontlyPayment.Size = new System.Drawing.Size(0, 13);
+            this.lblMontlyPayment.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(14, 55);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(29, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "APR";
+            // 
+            // lblAPR
+            // 
+            this.lblAPR.AutoSize = true;
+            this.lblAPR.Location = new System.Drawing.Point(114, 55);
+            this.lblAPR.Name = "lblAPR";
+            this.lblAPR.Size = new System.Drawing.Size(0, 13);
+            this.lblAPR.TabIndex = 3;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 471);
+            this.ClientSize = new System.Drawing.Size(711, 354);
             this.Controls.Add(this.tabCtrlMain);
             this.Name = "MainForm";
             this.Text = "Mortgage Calculator";
             this.tabCtrlMain.ResumeLayout(false);
             this.tabPageTerms.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownExtraPayment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownPMI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownTaxes)).EndInit();
             this.groupBoxTerms.ResumeLayout(false);
             this.groupBoxTerms.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwnDownPayment)).EndInit();
@@ -295,6 +452,18 @@
         private System.Windows.Forms.NumericUpDown numUpDwnDownPayment;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvAmortization;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.NumericUpDown numUpDownTaxes;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numUpDownPMI;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.NumericUpDown numUpDownExtraPayment;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblAPR;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblMontlyPayment;
+        private System.Windows.Forms.Label label9;
     }
 }
 

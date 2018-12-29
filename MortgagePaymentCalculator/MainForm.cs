@@ -12,7 +12,9 @@ namespace MortgagePaymentCalculator
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-          var apr =  GetCalculator().APR;
+          var calculator =  GetCalculator();
+          lblMontlyPayment.Text = calculator.Payment().ToString();
+          lblAPR.Text = calculator.APR.ToString();
         }
 
         private void tabCtrlMain_Selected(object sender, TabControlEventArgs e)
@@ -27,9 +29,10 @@ namespace MortgagePaymentCalculator
         private PaymentCalc GetCalculator()
         {
             var calculator =
-                PaymentCalc.CreateCalc(numUpDwnAmount.Value, (int)numUpDwnLoanTerm.Value, numUpDwnRate.Value, (int)numUpDwnPaymentsPerYear.Value, numUpDwnDownPayment.Value);
+                PaymentCalc.CreateCalc(numUpDwnAmount.Value, (int)numUpDwnLoanTerm.Value, numUpDwnRate.Value, (int)numUpDwnPaymentsPerYear.Value, numUpDwnDownPayment.Value, numUpDownTaxes.Value,numUpDownPMI.Value,numUpDownExtraPayment.Value);
 
             return calculator;
         }
+
     }
 }
